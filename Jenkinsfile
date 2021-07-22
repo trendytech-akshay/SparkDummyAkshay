@@ -18,9 +18,7 @@ pipeline {
             steps {
                 sh 'cd SparkWordCount && mvn clean package'
             }
-        }
-        stage('Deploy') {
-        }       
+        }      
     }
 }
 

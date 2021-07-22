@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'maven363'
+        maven 'maven360'
     }
     stages {
         stage('Compile') { 

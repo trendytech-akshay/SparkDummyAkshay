@@ -24,11 +24,7 @@ pipeline {
         }    
         stage('Deploy') {
             steps{
-                sh 'sshpass -p $ITVERSITY_PSW ssh -o StrictHostKeyChecking=no $ITVERSITY_USR@g02.itversity.com hostname'
-                        sh '''sshpass -p $ITVERSITY_PSW sftp -oBatchMode=no -b - $ITVERSITY_USR@g02.itversity.com << !
-                           put SparkWordCount/target/SparkWordCount-1.0-SNAPSHOT.jar
-                           bye
-                        !'''
+                sh 'gsutil cp SparkWordCount/target/SparkWordCount-1.0-SNAPSHOT.jar gs://incubation-bucket'
             }
         }
     }

@@ -24,7 +24,7 @@ pipeline {
         }    
         stage('Deploy') {
             steps{
-                sh 'gsutil cp SparkWordCount/target/SparkWordCount-1.0-SNAPSHOT.jar gs://incubation-bucket'
+                sh 'gsutil cp SparkWordCount/target/SparkWordCount-1.0-SNAPSHOT.jar gs://codejar/'
             }
         }
     }
